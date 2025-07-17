@@ -28,8 +28,6 @@
 
 ---
 
-## 📂 How to Use
+## live demo
+   [https://prasanna-joga.github.io/my-portfolio/]
 
-1. Clone this repo:
-   ```bash[
-  https://prasanna-joga.github.io/my-portfolio/
