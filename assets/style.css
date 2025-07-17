@@ -4,7 +4,102 @@ body {
   background: #0c0c0c;
   color: #fff;
 }
-nav {
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #191919;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  z-index: 1000;
+}
+
+/* Logo styling */
+.navbar .logo {
+  margin-left: 50px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.navbar .logo span {
+  color: #f9004d;
+}
+
+/* Nav links */
+.navbar .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  text-align: center;
+  margin: 0;
+  margin-left: 50px;
+  padding-top: 20px;
+
+}
+.navbar .nav-links li a {
+  padding-left: 30px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+  justify-content: space-between;
+}
+.navbar .nav-links li a:hover {
+  color: #ff4d6d;
+}
+nav .resume {
+  text-align: center;
+  align-items: center;
+  margin-right: 50px;
+  padding-top: 20px;
+  background: #ff0055;
+  padding: 8px 18px;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  
+} 
+.resume:hover{
+background-color: transparent;
+  border: 2px solid #f9004d;
+  cursor: pointer;
+}
+/* Hamburger icon hidden on desktop */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: #f9004d;
+  cursor: pointer;
+}
+
+/* Sections styling for demo */
+.section {
+  min-height: 100vh;
+  font-size: 2rem;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #000;
+    flex-direction: column;
+    width: 200px;
+    display: none;
+  }
+  .navbar .nav-links.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+/* nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -49,7 +144,7 @@ nav .resume {
   text-decoration: none;
   font-weight: 500;
   
-}
+} */
 .home {
   font-family: "Josefin Sans", sans-serif;
   display: flex;
@@ -302,70 +397,42 @@ main{
     flex-direction: column;
     padding-bottom: 100px;
 }
+.section{
+  padding-top: 200px;
+}
 .scroll {
-  position: relative;
+  width: 100%;           
+  overflow: hidden;     
+  background: #191919;  
+  padding: 10px 0;
+}
+
+.scroll-imgbox {
   display: flex;
-  width: 1000px;
-  overflow: hidden;
-  box-sizing: border-box;
- mask-image: linear-gradient(90deg, transparent 0%, #fff 20%, #fff 80%, transparent 100%);
--webkit-mask-image: linear-gradient(90deg, transparent 0%, #fff 20%, #fff 80%, transparent 100%);
-}
-.scroll div {
-    white-space: nowrap;
-    animation: scroll var(--time) linear infinite;
-    animation-delay: calc(var(--time)*-1);
-
-}
-.scroll div:nth-child(2) {
-    animation: scroll2 var(--time) linear infinite;
-    animation-delay: calc(var(--time)/-2);
+  align-items: center;
+  gap: 20px;
+  animation: scrollLeft 15s linear infinite;
 }
 
-@keyframes scroll {
-    0% {
-        transform: translateX(100%);
-    }
-
-    100% {
-        transform: translateX(-100%);
-    }
+.scroll-imgbox img {
+  height: 70px;        
+  width: auto;
+  flex-shrink: 0;       
 }
-
-@keyframes scroll2 {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-200%);
-    }
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
-.scroll div span {
-    display: inline-flex;
-    margin: 10px;
-    letter-spacing: 0.2em;
-    background: #333;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 10px;
-    transition: 0.5s;
-}
+@media (max-width: 768px) {
+  .scroll-imgbox img {
 
-.scroll div span:hover {
-    background:#f9004d;
-    cursor: pointer;
-}
-
-.imgBox div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-.imgBox img {
-    max-width: 100px;
-    scale: 0.8;
+    height: 30px;
+    margin: 0;
+  }
 }
 .prass{
    font-size: 36px;
@@ -377,12 +444,17 @@ main{
   cursor: pointer;
   transition: all 0.5s;
 }
+@media (max-width: 768px) {
+  .scroll-imgbox img {
+    height: 40px;
+    margin: 0 10px;
+  }
+}
  .projects-section {
   padding: 60px 20px;
   text-align: center;
   background-color: #000;
 }
-
 .projects-section h2 {
   font-size: 36px;
   margin-bottom: 40px;
@@ -675,4 +747,40 @@ footer p span {
 ::selection {
   background: #f9004d;
   color: white; 
+}
+/* ========== MOBILE NAVBAR CONVERSION ========== */
+@media (max-width: 768px) {
+  nav {
+    position: relative;    /* No fixed sidebar */
+    width: 100%;           /* Full width */
+    height: auto;          /* Auto height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #000;      /* Change to your background color */
+    padding: 10px 0;
+    z-index: 1000;         /* Make sure it stays on top if needed */
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;   /* Links go in a row */
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li {
+    width: auto;
+    border: none;
+    list-style: none;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+  }
 }
