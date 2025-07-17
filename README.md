@@ -24,12 +24,12 @@
 
 | Desktop View |
 |--------------|
-| ![Desktop](your-desktop-image-url) 
+| ![Desktop](assets/prasanna.img.png) 
 
 ---
 
 ## 📂 How to Use
 
 1. Clone this repo:
-   ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   ```bash[
+  https://prasanna-joga.github.io/my-portfolio/
