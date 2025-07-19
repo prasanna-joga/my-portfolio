@@ -29,5 +29,5 @@
 ---
 
 ## live demo
-   [https://prasanna-joga.github.io/my-portfolio/]
+  https://prasanna-joga.github.io/my-portfolio/
 
