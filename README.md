@@ -15,7 +15,7 @@ It showcases my projects, skills, and background — designed to be fully **resp
 
 | 💻 Laptop View | 📱 Mobile View |
 |----------------|----------------|
-| ![Laptop View](readme-images/laptop.png) | ![Mobile View](readme-images/mobile.png) |
+| ![Laptop View](assets/prasanna.img.png) | ![Mobile View](readme-images/mobile.png) |
 
 > 📸 *Add your screenshots in a folder named `readme-images/` inside your repo.*
 
