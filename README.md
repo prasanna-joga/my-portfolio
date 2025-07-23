@@ -17,10 +17,6 @@ It showcases my projects, skills, and background — designed to be fully **resp
 |----------------|----------------|
 | ![Laptop View](assets/prasanna.img.png) | ![Mobile View](assets/prasanna.joga.jpg) |
 
-> 📸 *Add your screenshots in a folder named `readme-images/` inside your repo.*
-
----
-
 ## 🚀 Sections Included
 
 - **Home**
