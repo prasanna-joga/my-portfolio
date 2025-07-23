@@ -1,8 +1,16 @@
-body {
+* {
   margin: 0;
-  font-family: "Josefin Sans", sans-serif;
-  background: #0c0c0c;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background-color: #000;
   color: #fff;
+  font-family: "Josefin Sans", sans-serif;
+  overflow-x: hidden;
 }
 html {
   font-size: 16px;
@@ -51,7 +59,6 @@ html {
   padding-left: 30px;
   text-decoration: none;
   color: #fff;
-  font-weight: 500;
   transition: color 0.3s;
   justify-content: space-between;
 }
@@ -59,16 +66,14 @@ html {
   color: #ff4d6d;
 }
 nav .resume {
-  text-align: center;
+  text-align: justify;
   align-items: center;
   margin-right: 50px;
-  padding-top: 20px;
   background: #ff0055;
   padding: 8px 18px;
   color: #fff;
   border-radius: 6px;
   text-decoration: none;
-  font-weight: 500;
   
 } 
 .resume:hover{
@@ -194,6 +199,15 @@ background-color: transparent;
     flex-direction: column;
     text-align: center;
   }
+  .home-content h1 {
+    font-size: 20px;
+  }
+  .home-content h2 {
+   font-size: 30px;
+  }
+  .home-content p {
+    font-size: 15px;
+  }
   .home-image {
     margin-top: 30px;
   }
@@ -280,98 +294,83 @@ button:hover{
   }
 
   .About h2 {
-    text-align: justify;
+    text-align: center;
     font-size: 28px;
   }
 
   .About p {
-    text-align: center;
-    font-size: 14px;
+    text-align: justify;
+    font-size: 28px;
   }
 }
-main.row{
-   margin-left: 20px;
-  margin-right: 20px;
+
+.education-section {
+  width: 100%;
+  padding: 50px 20px;
   background-color: #000;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 10px ;
-  padding: 50px; 
-  z-index: 2000;
 }
-h2{
- margin-bottom: 20px  
-}
-.col header.title{
-  font-family:  Helvetica;
-  color: #f9004d;
+
+.title h2 {
+  font-size: 48px;
   text-align: center;
+  margin-bottom: 30px;
 }
-.col header.title :hover{
-  color: #fff;
-  background-color: transparent;
+h2:hover{
+  color:  #f9004d ;
+  transition: 0.2s;
   cursor: pointer;
 }
-.col .contents{
-  padding: 30px 30px;
-  border-left: 2px solid #fff;
-  color: #fff;
+.contents {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 30px;
+  flex-wrap: wrap;
 }
-.col .contents .box{
-  position: relative;
-  padding: 20px;
-  border: 1px solid #eaeaea;
-  transition: all 0.4s;
-  margin-bottom: 20px;
+span{
+  color: #f9004d;
 }
-.col.contents.box:hover{
-  box-shadow: 0px 3px 12px 0px #ccc;
-  border: 1px solid transparent;
+.box {
+  border-left: 3px solid #fff;
+  padding-left: 20px;
+  max-width: 300px;
 }
-.col.contents .box::before{
-  content: '';
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  right: calc(100% + 22px);
-  right: 100%;
-  top: 0;
-  background-color: #fff;
-  border: 2px solid white;
+
+.box h3, .box h4, .box h5, .box p {
+  margin-bottom: 10px;
 }
-.long{
-  margin: 0;
-  padding: 0;
-  letter-spacing: 1px;
-}
-.box h3{
-  font-size: 25px;
-  padding: 10px;
-}
-.box p{
-  text-align: center;
-  line-height: 1.2;
-  color: #fff;
-  font-size: 20px;
- justify-content: space-between;
-}
-@media(max-width: 768px){
-  main.row{
-    margin-left: 90px;
-    padding: 60px 60px;
-    justify-items: center;
-    text-align: center;
+@media screen and (max-width: 768px) {
+  .contents {
+    flex-direction: column;
+    align-items: center;
   }
-  .row .col:nth-child(2){
-    margin-top: 30px;
-    margin-left: 10px;
+
+  .box {
+    width: 90%;
+    padding: 10px;
+    border-left: 3px solid #fff;
+    margin-bottom: 20px;
   }
-  .box p{
-    margin-left: 10px;
-    font-size: 15px;
-    text-align: center;
-    display: flex;
+
+  .title h2 {
+    font-size: 30px;
+  }
+
+  .box h3, .box h4, .box h5, .box p {
+    text-align: left;
+    font-size: 14px;
+  }
+
+  .about-text h2 {
+    font-size: 28px;
+  }
+
+  .about-text h5 {
+    font-size: 18px;
+  }
+
+  .about-text p {
+    font-size: 14px;
   }
 }
 main{
@@ -502,14 +501,10 @@ main{
 @media (max-width: 768px) {
  .projects-section h2{
    text-align: center;
-   margin: 20px;
  } 
- .projects-container{
-  margin-left: 50px;
- }
  .project-card{
   text-align: justify;
-    font-size: 29px;
+    font-size: 14px;
  }
 }
 
@@ -587,12 +582,10 @@ main{
 @media (max-width: 768px) {
  .certification-section {
   padding: 0 0 80px;
-  margin-left: 70px;
   background-color: #000;
  } 
  h2{
    font-size: 36px;
-  margin-left: 80px;
   color: #fff;
  }
  h3{
